@@ -442,7 +442,7 @@ export function ProductSection() {
               </div>
             </div>
             <div
-              className="pointer-events-none absolute right-[-14rem] bottom-[-14rem] w-[39rem] origin-bottom-right scale-[0.6] md:scale-100"
+              className="pointer-events-none absolute right-[-2rem] bottom-[-2rem] w-[39rem] origin-bottom-right scale-[0.4] md:right-[-14rem] md:bottom-[-14rem] md:scale-100"
               style={{
                 transform:
                   "perspective(900px) rotateY(-8deg) rotateX(5deg) rotate(1deg)",
@@ -880,7 +880,7 @@ export function ProductSection() {
             </div>
             {/* Dashboard widget — full inner width on desktop, scaled-down
                 bottom-right thumbnail on mobile. */}
-            <div className="pointer-events-none absolute right-3 bottom-3 w-[15rem] origin-bottom-right scale-[0.7] md:right-8 md:left-8 md:bottom-6 md:w-auto md:scale-100">
+            <div className="pointer-events-none absolute right-2 bottom-2 w-[12rem] origin-bottom-right scale-[0.6] md:right-8 md:left-8 md:bottom-6 md:w-auto md:scale-100">
               {/* User question bubble */}
               <div className="flex justify-end">
                 <div className="rounded-2xl rounded-tr-md bg-cobalt-pale px-3 py-1.5 text-xs font-medium text-slate-900 shadow-[0_2px_8px_-2px_rgba(15,23,42,0.1)]">

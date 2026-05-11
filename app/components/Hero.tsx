@@ -44,7 +44,7 @@ export default function Hero() {
       </div>
 
       {/* Partner row */}
-      <div className="absolute right-0 bottom-24 left-0 z-10 px-6">
+      <div className="absolute right-0 bottom-8 left-0 z-10 px-6 sm:bottom-24">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
           {[
             { name: "Visa", src: "/logos/visa.png", h: 22 },

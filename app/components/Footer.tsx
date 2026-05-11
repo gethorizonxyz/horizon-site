@@ -84,6 +84,7 @@ export function Footer() {
             <HorizonLogo className="h-5 w-5 text-slate-700" />
             <span>© 2026 Horizon, Inc.</span>
           </div>
+          {/* Legal links hidden until pages exist — re-enable when ready.
           <div className="flex flex-wrap gap-6 text-sm text-slate-500">
             <a href="#" className="transition-colors hover:text-slate-900">
               Terms of service
@@ -95,6 +96,7 @@ export function Footer() {
               Legal
             </a>
           </div>
+          */}
         </div>
       </div>
 
