@@ -19,7 +19,7 @@ export async function joinWaitlist(
   }
 
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) {
     return { ok: false, error: "Server not configured." };
   }
@@ -30,8 +30,7 @@ export async function joinWaitlist(
       "Content-Type": "application/json",
       apikey: key,
       Authorization: `Bearer ${key}`,
-      // Requires a unique constraint on `email` — see README.
-      Prefer: "resolution=ignore-duplicates,return=minimal",
+      Prefer: "return=minimal",
     },
     body: JSON.stringify({ email }),
     cache: "no-store",
