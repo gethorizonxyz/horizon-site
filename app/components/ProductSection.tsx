@@ -442,7 +442,7 @@ export function ProductSection() {
               </div>
             </div>
             <div
-              className="pointer-events-none absolute right-[-2rem] bottom-[-2rem] w-[39rem] origin-bottom-right scale-[0.4] md:right-[-14rem] md:bottom-[-14rem] md:scale-100"
+              className="pointer-events-none absolute right-[-6rem] bottom-[-2rem] w-[39rem] origin-bottom-right scale-[0.4] md:right-[-14rem] md:bottom-[-14rem] md:scale-100"
               style={{
                 transform:
                   "perspective(900px) rotateY(-8deg) rotateX(5deg) rotate(1deg)",
