@@ -1,0 +1,54 @@
+.glass-container {
+  position: relative;
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 600;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+/* Layer 0: REAL refraction via SVG filter (backdrop-filter set inline) */
+.glass-filter {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  isolation: isolate;
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+}
+
+/* Layer 1: tint */
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: hsla(0, 0%, 100%, 0.32);
+  pointer-events: none;
+}
+
+/* Layer 2: inner glass edge highlight */
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  box-shadow:
+    inset 1px 1px 0 hsla(0, 0%, 100%, 0.75),
+    inset 0 0 5px hsla(0, 0%, 100%, 0.75);
+  pointer-events: none;
+}
+
+/* Layer 3: content */
+.glass-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

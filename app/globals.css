@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #eef2f8;
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Brand palette — Cobalt */
+  --color-cobalt-deep: #1f3bd6;
+  --color-cobalt: #3a5ef0;
+  --color-cobalt-soft: #a8b8f5;
+  --color-cobalt-pale: #dce2f8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Helvetica Now Display, with system Helvetica fallbacks. Used everywhere. */
+  --font-sans:
+    "Helvetica Now Display", "Helvetica Now", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  --font-display:
+    "Helvetica Now Display", "Helvetica Now", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Force scrollbar always visible so layout stays consistent across pages */
+  overflow-y: scroll;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Offset for fixed navbar when jumping to a section */
+section[id] {
+  scroll-margin-top: 4.5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.012em;
+}
+
+/* Hero clouds are now drawn directly inside Hero.tsx as inline SVG (gooey filter). */
+
+/* ---------- Waitlist form pulse highlight (Get Started / Log In) ---------- */
+@keyframes wl-pulse {
+  0% {
+    box-shadow:
+      0 8px 30px rgba(15, 23, 42, 0.15),
+      0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  40% {
+    box-shadow:
+      0 8px 30px rgba(15, 23, 42, 0.15),
+      0 0 0 8px rgba(255, 255, 255, 0.45);
+  }
+  100% {
+    box-shadow:
+      0 8px 30px rgba(15, 23, 42, 0.15),
+      0 0 0 16px rgba(255, 255, 255, 0);
+  }
+}
+.wl-pulse {
+  animation: wl-pulse 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 forwards;
 }

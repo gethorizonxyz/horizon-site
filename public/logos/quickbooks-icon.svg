@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet">
+  <circle cx="32" cy="32" r="32" fill="#2CA01C"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round">
+    <!-- q: circle on left + descending stem on right -->
+    <circle cx="22" cy="30" r="7.5"/>
+    <line x1="29.5" y1="22.5" x2="29.5" y2="46"/>
+    <!-- b: ascending stem on left + circle on right -->
+    <line x1="34.5" y1="18" x2="34.5" y2="41.5"/>
+    <circle cx="42" cy="34" r="7.5"/>
+  </g>
+</svg>

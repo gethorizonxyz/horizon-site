@@ -1,9 +1,24 @@
+import { Footer } from "./components/Footer";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import { PricingSection } from "./components/PricingSection";
+import { ProductSection } from "./components/ProductSection";
+
 export default function Home() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-white text-black dark:bg-black dark:text-white">
-      <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">
-        Horizon
-      </h1>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <ProductSection />
+        <PricingSection />
+        {/* White seam — fills Pricing's rounded bottom cutaways with Footer's bg color */}
+        <div
+          aria-hidden="true"
+          className="relative z-[1] -mt-8 h-8 bg-white"
+        />
+        <Footer />
+      </main>
+    </>
   );
 }

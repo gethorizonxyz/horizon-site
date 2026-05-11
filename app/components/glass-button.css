@@ -1,0 +1,110 @@
+.glass-btn-wrap {
+  position: relative;
+  display: inline-block;
+  border-radius: 999vw;
+  max-width: calc(100vw - 2rem);
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-btn {
+  --border-width: clamp(1px, 0.0625em, 4px);
+  --angle-1: -75deg;
+  --angle-2: -45deg;
+  all: unset;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+  border-radius: 999vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background: linear-gradient(
+    -75deg,
+    rgba(230, 245, 255, 0.08),
+    rgba(240, 250, 255, 0.2),
+    rgba(230, 245, 255, 0.08)
+  );
+  box-shadow:
+    inset 0 2px 2px 0 rgba(0, 0, 0, 0.05),
+    inset 0 -2px 2px 0 hsla(0, 0%, 100%, 0.5),
+    0 4px 2px -2px rgba(0, 0, 0, 0.2),
+    inset 0 0 1.6px 4px rgba(210, 235, 255, 0.25);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-btn:hover {
+  --angle-1: -125deg;
+  --angle-2: 135deg;
+  backdrop-filter: blur(0.16px);
+  -webkit-backdrop-filter: blur(0.16px);
+  transform: scale(0.975);
+  box-shadow:
+    inset 0 2px 2px 0 rgba(0, 0, 0, 0.05),
+    inset 0 -2px 2px 0 hsla(0, 0%, 100%, 0.5),
+    0 2.4px 0.8px -1.6px rgba(0, 0, 0, 0.25),
+    inset 0 0 0.8px 1.6px hsla(0, 0%, 100%, 0.5);
+}
+
+/* Animated conic-gradient border */
+.glass-btn::after {
+  content: "";
+  position: absolute;
+  inset: calc(0% - var(--border-width) / 2);
+  width: calc(100% + var(--border-width));
+  height: calc(100% + var(--border-width));
+  padding: var(--border-width);
+  border-radius: 999vw;
+  background:
+    conic-gradient(
+      from var(--angle-1) at 50% 50%,
+      rgba(20, 60, 120, 0.5),
+      rgba(150, 200, 255, 0.1) 5% 40%,
+      rgba(20, 60, 120, 0.5) 50%,
+      rgba(150, 200, 255, 0.1) 60% 95%,
+      rgba(20, 60, 120, 0.5)
+    ),
+    linear-gradient(180deg, rgba(220, 240, 255, 0.5), rgba(240, 250, 255, 0.5));
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.glass-btn span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #1d3a8a;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -0.18px;
+  padding-inline: 1.75em;
+  text-shadow: 0 0.05em 0.05em rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+
+/* Soft drop-shadow plate behind the button */
+.glass-btn-shadow {
+  --cutoff: 2em;
+  position: absolute;
+  inset: calc(0% - var(--cutoff) / 2);
+  width: calc(100% + var(--cutoff));
+  height: calc(100% + var(--cutoff));
+  filter: blur(clamp(2px, 0.0625em, 6px));
+  pointer-events: none;
+}
+.glass-btn-shadow::after {
+  content: "";
+  position: absolute;
+  inset: var(--cutoff) calc(var(--cutoff) / 2);
+  border-radius: 999vw;
+  background: linear-gradient(rgba(0, 50, 100, 0.15), rgba(0, 80, 150, 0.08));
+}
