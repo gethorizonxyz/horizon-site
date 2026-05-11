@@ -3,6 +3,16 @@
 import { useActionState, useEffect, useState } from "react";
 import { joinWaitlist, type WaitlistResult } from "../actions/waitlist";
 
+declare global {
+  interface Window {
+    gtag?: (
+      command: "event" | "config" | "js" | "set",
+      target: string,
+      params?: Record<string, unknown>,
+    ) => void;
+  }
+}
+
 export function WaitlistForm() {
   const [pulse, setPulse] = useState(false);
   const [state, action, pending] = useActionState<
@@ -23,6 +33,16 @@ export function WaitlistForm() {
       window.clearTimeout(timeout);
     };
   }, []);
+
+  useEffect(() => {
+    if (state?.ok) {
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-18149483837/ZgqrCNes3KkcEL3KrM5D",
+        value: 1.0,
+        currency: "USD",
+      });
+    }
+  }, [state]);
 
   if (state?.ok) {
     return (
