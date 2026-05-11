@@ -27,8 +27,8 @@ export default function Hero() {
       />
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-        <h1 className="font-display bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_45%,rgba(255,255,255,0.55)_100%)] bg-clip-text pb-3 text-[3.5rem] font-normal leading-[1.15] tracking-[-0.04em] text-transparent sm:text-7xl md:text-8xl">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center">
+        <h1 className="font-display bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_45%,rgba(255,255,255,0.55)_100%)] bg-clip-text pb-3 text-5xl font-normal leading-[1.15] tracking-[-0.04em] text-transparent sm:text-7xl md:text-8xl">
           The first <RotatingWord />
           <br />
           finance OS
