@@ -4,8 +4,7 @@ import { HorizonLogo } from "../components/HorizonLogo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Horizon",
-  description:
-    "How Horizon (H & K Visuals GbR) collects, uses, and protects your information.",
+  description: "How Horizon collects, uses, and protects your information.",
   robots: { index: false, follow: false },
 };
 
@@ -43,9 +42,6 @@ export default function PrivacyPolicyPage() {
         <h1 className="mt-3 text-5xl font-medium tracking-[-0.025em] text-slate-900 sm:text-6xl">
           Privacy Policy
         </h1>
-        <p className="mt-3 text-base text-slate-600">
-          Horizon · H &amp; K Visuals GbR
-        </p>
         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-500">
           <span>
             <span className="font-medium text-slate-700">Effective Date:</span>{" "}
@@ -63,13 +59,13 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="mt-4">
-              This Privacy Policy explains how H &amp; K Visuals GbR
-              (&ldquo;Horizon&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
-              &ldquo;our&rdquo;) collects, uses, discloses, and safeguards your
-              information when you visit our website at gethorizon.xyz (the
-              &ldquo;Website&rdquo;), sign up for our waitlist, interact with
-              our marketing on third-party platforms (including LinkedIn, X,
-              and Google), or otherwise communicate with us.
+              This Privacy Policy explains how Horizon (&ldquo;we&rdquo;,
+              &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses,
+              discloses, and safeguards your information when you visit our
+              website at gethorizon.xyz (the &ldquo;Website&rdquo;), sign up
+              for our waitlist, interact with our marketing on third-party
+              platforms (including LinkedIn, X, and Google), or otherwise
+              communicate with us.
             </p>
             <p className="mt-4">
               Please read this Privacy Policy carefully. By using our Website
@@ -81,43 +77,11 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              2. Data Controller
-            </h2>
-            <p className="mt-4">
-              The data controller responsible for the processing of your
-              personal data under the EU General Data Protection Regulation
-              (GDPR) is:
-            </p>
-            <address className="mt-4 not-italic">
-              <span className="font-medium text-slate-900">
-                H &amp; K Visuals GbR
-              </span>
-              <br />
-              Mergenthalerallee 77
-              <br />
-              65760 Eschborn
-              <br />
-              Germany
-              <br />
-              VAT-ID: DE365921368
-              <br />
-              Email:{" "}
-              <a
-                href="mailto:privacy@gethorizon.xyz"
-                className="font-medium text-cobalt-deep underline decoration-cobalt-deep/40 underline-offset-4 transition-colors hover:decoration-cobalt-deep"
-              >
-                privacy@gethorizon.xyz
-              </a>
-            </address>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              3. Information We Collect
+              2. Information We Collect
             </h2>
 
             <h3 className="mt-6 text-lg font-medium tracking-tight text-slate-900">
-              3.1 Information You Provide Directly
+              2.1 Information You Provide Directly
             </h3>
             <p className="mt-3">
               We collect information you provide when you sign up for our
@@ -139,7 +103,7 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <h3 className="mt-8 text-lg font-medium tracking-tight text-slate-900">
-              3.2 Information Collected Automatically
+              2.2 Information Collected Automatically
             </h3>
             <p className="mt-3">
               When you visit our Website, we automatically collect certain
@@ -153,7 +117,7 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <h3 className="mt-8 text-lg font-medium tracking-tight text-slate-900">
-              3.3 Information From Third Parties
+              2.3 Information From Third Parties
             </h3>
             <p className="mt-3">
               When you interact with our advertisements on third-party
@@ -166,7 +130,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              4. How We Use Your Information
+              3. How We Use Your Information
             </h2>
             <p className="mt-4">We use the information we collect to:</p>
             <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-slate-400">
@@ -186,7 +150,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              5. Legal Basis for Processing (GDPR)
+              4. Legal Basis for Processing (GDPR)
             </h2>
             <p className="mt-4">
               If you are located in the European Economic Area (EEA), United
@@ -226,7 +190,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              6. How We Share Your Information
+              5. How We Share Your Information
             </h2>
             <p className="mt-4">
               We do not sell your personal information. We share information
@@ -234,7 +198,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h3 className="mt-6 text-lg font-medium tracking-tight text-slate-900">
-              6.1 Service Providers
+              5.1 Service Providers
             </h3>
             <p className="mt-3">
               We use trusted third-party service providers to help us operate,
@@ -245,7 +209,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h3 className="mt-6 text-lg font-medium tracking-tight text-slate-900">
-              6.2 Advertising Platforms
+              5.2 Advertising Platforms
             </h3>
             <p className="mt-3">
               We work with advertising platforms including LinkedIn, X, and
@@ -256,7 +220,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h3 className="mt-6 text-lg font-medium tracking-tight text-slate-900">
-              6.3 Legal Requirements
+              5.3 Legal Requirements
             </h3>
             <p className="mt-3">
               We may disclose information when required by law, court order,
@@ -265,7 +229,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h3 className="mt-6 text-lg font-medium tracking-tight text-slate-900">
-              6.4 Business Transfers
+              5.4 Business Transfers
             </h3>
             <p className="mt-3">
               In the event of a merger, acquisition, financing, or sale of
@@ -277,7 +241,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              7. Data Retention
+              6. Data Retention
             </h2>
             <p className="mt-4">
               We retain your personal data only as long as necessary for the
@@ -317,7 +281,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              8. International Data Transfers
+              7. International Data Transfers
             </h2>
             <p className="mt-4">
               Some of our service providers and advertising platforms are
@@ -331,7 +295,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              9. Your Rights Under GDPR
+              8. Your Rights Under GDPR
             </h2>
             <p className="mt-4">
               If you are located in the EEA, United Kingdom, or Switzerland,
@@ -389,9 +353,7 @@ export default function PrivacyPolicyPage() {
                 <span className="font-medium text-slate-900">
                   Right to lodge a complaint
                 </span>{" "}
-                (Art. 77 GDPR): file a complaint with a supervisory authority,
-                such as the Hessischer Beauftragter für Datenschutz und
-                Informationsfreiheit in Germany.
+                (Art. 77 GDPR): file a complaint with a supervisory authority.
               </li>
             </ul>
             <p className="mt-4">
@@ -409,7 +371,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              10. Security
+              9. Security
             </h2>
             <p className="mt-4">
               We implement appropriate technical and organizational measures
@@ -424,7 +386,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              11. Cookies and Similar Technologies
+              10. Cookies and Similar Technologies
             </h2>
             <p className="mt-4">
               Our Website uses cookies and similar tracking technologies to
@@ -462,7 +424,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              12. Children&apos;s Privacy
+              11. Children&apos;s Privacy
             </h2>
             <p className="mt-4">
               Our Website and services are intended for users aged 16 and
@@ -475,7 +437,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              13. Changes to This Privacy Policy
+              12. Changes to This Privacy Policy
             </h2>
             <p className="mt-4">
               We may update this Privacy Policy from time to time. We will
@@ -489,36 +451,26 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-medium tracking-tight text-slate-900">
-              14. Contact Us
+              13. Contact Us
             </h2>
             <p className="mt-4">
               If you have any questions, concerns, or requests regarding this
-              Privacy Policy or our data practices, please contact us at:
-            </p>
-            <address className="mt-4 not-italic">
-              <span className="font-medium text-slate-900">
-                H &amp; K Visuals GbR
-              </span>
-              <br />
-              Mergenthalerallee 77
-              <br />
-              65760 Eschborn, Germany
-              <br />
-              Email:{" "}
+              Privacy Policy or our data practices, please contact us at{" "}
               <a
                 href="mailto:privacy@gethorizon.xyz"
                 className="font-medium text-cobalt-deep underline decoration-cobalt-deep/40 underline-offset-4 transition-colors hover:decoration-cobalt-deep"
               >
                 privacy@gethorizon.xyz
               </a>
-            </address>
+              .
+            </p>
           </section>
         </div>
       </main>
 
       <footer className="border-t border-slate-200">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-6 text-sm text-slate-500">
-          <span>© 2026 H &amp; K Visuals GbR</span>
+          <span>© 2026 Horizon</span>
           <Link
             href="/"
             className="font-medium transition-colors hover:text-slate-900"
