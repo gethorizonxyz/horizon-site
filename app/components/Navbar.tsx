@@ -174,11 +174,7 @@ export default function Navbar() {
         {/* Right cluster */}
         <div className="flex items-center gap-4">
           <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              triggerWaitlistPulse();
-            }}
+            href="https://dashboard.gethorizon.xyz/login"
             className={`hidden text-base font-medium transition-colors sm:inline ${
               pastHero
                 ? "text-slate-700 hover:text-slate-900"
