@@ -1000,7 +1000,7 @@ export function ProductSection() {
                 <div>
                   <div className="flex items-baseline gap-1 text-cobalt-deep">
                     <span className="text-6xl font-medium tracking-[-0.04em]">
-                      5.2
+                      4.7
                     </span>
                     <span className="text-xl font-medium">%</span>
                   </div>
