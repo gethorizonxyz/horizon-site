@@ -120,7 +120,7 @@ export default function Navbar() {
         {/* Center pill — content always visible; glass background fades in on scroll */}
         <nav
           aria-label="Primary"
-          className="absolute left-1/2 hidden -translate-x-1/2 p-2 md:block"
+          className="absolute left-1/2 hidden -translate-x-1/2 p-2 xl:block"
         >
           {/* Glass background layer — opacity transitions for a clean fade */}
           <div

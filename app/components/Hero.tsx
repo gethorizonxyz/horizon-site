@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden rounded-bl-[2rem] rounded-br-[2rem] shadow-[0_24px_40px_-16px_rgba(15,23,42,0.18),0_8px_16px_-6px_rgba(15,23,42,0.08)] [backface-visibility:hidden] [transform:translateZ(0)] [will-change:transform]"
+      className="relative isolate z-10 flex min-h-screen flex-col overflow-hidden rounded-bl-[2rem] rounded-br-[2rem] shadow-[0_24px_40px_-16px_rgba(15,23,42,0.18),0_8px_16px_-6px_rgba(15,23,42,0.08)] [backface-visibility:hidden] [transform:translateZ(0)] [will-change:transform]"
     >
       {/* Sky photo, slightly darkened (neutral, no color tint) for white-text readability */}
       <div
@@ -13,7 +13,7 @@ export default function Hero() {
         className="absolute inset-0 -z-20"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(31,59,214,0.14) 0%, rgba(58,94,240,0.10) 100%), url('/sky.jpg')",
+            "linear-gradient(180deg, rgba(31,59,214,0.14) 0%, rgba(58,94,240,0.10) 100%), url('/sky.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "multiply",
@@ -26,8 +26,12 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-white/20"
       />
 
-      {/* Hero content */}
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center">
+      {/* Hero content — flex-1 so it vertically centers in the space
+          ABOVE the partner row, which now lives in normal flow at the
+          bottom. Prevents the old absolute-positioned logos from
+          overlapping the waitlist on short / wide viewports. */}
+      <div className="relative z-10 flex flex-1 items-center justify-center px-6 pt-28 pb-10">
+      <div className="mx-auto w-full max-w-5xl text-center">
         <h1 className="font-display bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_45%,rgba(255,255,255,0.55)_100%)] bg-clip-text pb-3 text-5xl font-normal leading-[1.15] tracking-[-0.04em] text-transparent sm:text-7xl md:text-8xl">
           The first <RotatingWord />
           <br />
@@ -41,10 +45,13 @@ export default function Hero() {
         </p>
 
         <WaitlistForm />
+        </div>
       </div>
 
-      {/* Partner row */}
-      <div className="absolute right-0 bottom-8 left-0 z-10 px-6 sm:bottom-24">
+      {/* Partner row — normal flow at the bottom of the flex column
+          (not absolute), so it always sits below the waitlist with
+          breathing room and never overlaps it at any viewport size. */}
+      <div className="relative z-10 w-full px-6 pb-10 pt-4 sm:pb-16">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
           {[
             { name: "Visa", src: "/logos/visa.png", h: 22 },

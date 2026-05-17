@@ -18,7 +18,7 @@ const PLANS: Plan[] = [
     period: "/forever",
     description: "For founders opening their first global business account.",
     features: [
-      "Self-custody vault — your keys, always",
+      "Self-custody vault, your keys always",
       "Send and receive in 195+ countries",
       "Up to 3 team members",
       "Real-time treasury dashboard",
