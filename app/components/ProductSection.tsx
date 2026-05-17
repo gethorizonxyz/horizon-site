@@ -842,7 +842,7 @@ export function ProductSection() {
             maxTilt={5}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(31,59,214,0.14) 0%, rgba(58,94,240,0.10) 100%), url('/sky.jpg')",
+                "linear-gradient(180deg, rgba(31,59,214,0.14) 0%, rgba(58,94,240,0.10) 100%), url('/sky.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundBlendMode: "multiply",

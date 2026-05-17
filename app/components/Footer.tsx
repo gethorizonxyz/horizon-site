@@ -27,7 +27,7 @@ export function Footer() {
           className="relative overflow-hidden rounded-3xl p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-20px_rgba(15,23,42,0.25)] sm:p-14 lg:p-16"
           style={{
             backgroundImage:
-              "linear-gradient(135deg, rgba(31,59,214,0.16) 0%, rgba(58,94,240,0.10) 100%), url('/sky.jpg')",
+              "linear-gradient(135deg, rgba(31,59,214,0.16) 0%, rgba(58,94,240,0.10) 100%), url('/sky.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
@@ -123,7 +123,7 @@ export function Footer() {
               height="316"
             >
               <image
-                href="/sky.jpg"
+                href="/sky.webp"
                 x="0"
                 y="-200"
                 width="1232"
