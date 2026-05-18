@@ -173,6 +173,32 @@ export default function Navbar() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-4">
+          {/* Mobile: icon-only login (the text link is hidden < sm) */}
+          <a
+            href="https://dashboard.gethorizon.xyz/login"
+            aria-label="Log in"
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition-colors sm:hidden ${
+              pastHero
+                ? "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                : "text-white [filter:drop-shadow(0_2px_4px_rgba(15,23,42,0.35))] hover:opacity-80"
+            }`}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <path d="M10 17l5-5-5-5" />
+              <path d="M15 12H3" />
+            </svg>
+          </a>
           <a
             href="https://dashboard.gethorizon.xyz/login"
             className={`hidden text-base font-medium transition-colors sm:inline ${
