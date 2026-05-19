@@ -12,21 +12,6 @@ const NAV_ITEMS = [
 
 type SectionId = (typeof NAV_ITEMS)[number]["id"];
 
-// Smooth-scrolls to the top, then fires the waitlist pulse AFTER the scroll
-// animation lands so the user actually sees it (longer scroll = longer delay).
-function triggerWaitlistPulse() {
-  const startY = window.scrollY;
-  if (startY < 5) {
-    window.dispatchEvent(new CustomEvent("horizon:highlight-waitlist"));
-    return;
-  }
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  const delay = Math.max(350, Math.min(1500, startY * 0.4 + 250));
-  window.setTimeout(() => {
-    window.dispatchEvent(new CustomEvent("horizon:highlight-waitlist"));
-  }, delay);
-}
-
 export default function Navbar() {
   const [active, setActive] = useState<SectionId>("home");
   // Glass pill background appears as soon as you scroll a bit past the very top.
@@ -210,14 +195,12 @@ export default function Navbar() {
             Log In
           </a>
           <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              triggerWaitlistPulse();
-            }}
+            href="https://calendly.com/business-cashly/horizon-access"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-base font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.06),0_4px_14px_rgba(15,23,42,0.3)] transition-colors hover:bg-slate-800"
           >
-            Get Started
+            Book a demo
             <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
               <path
                 d="M3 8h9M8 3.5L12.5 8 8 12.5"
