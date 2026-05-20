@@ -13,12 +13,72 @@ declare global {
   }
 }
 
+/**
+ * Attribution source: read from `?ref=<slug>` on entry and persist in
+ * localStorage for 30 days. A user who clicks an X-ad today and signs
+ * up next week still attributes correctly. Slug is URL-safe lowercase
+ * alphanumeric/`-`, max 60 chars. Server re-validates.
+ */
+const REF_STORAGE_KEY = "horizon.waitlist.ref.v1";
+const REF_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const REF_PATTERN = /^[a-z0-9][a-z0-9-]{0,59}$/;
+type StoredRef = { value: string; expiresAt: number };
+
+function readStoredRef(): string | null {
+  try {
+    const raw = window.localStorage.getItem(REF_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as StoredRef;
+    if (typeof parsed?.value !== "string") return null;
+    if (typeof parsed?.expiresAt !== "number") return null;
+    if (Date.now() > parsed.expiresAt) {
+      window.localStorage.removeItem(REF_STORAGE_KEY);
+      return null;
+    }
+    return parsed.value;
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredRef(value: string) {
+  try {
+    const payload: StoredRef = {
+      value,
+      expiresAt: Date.now() + REF_TTL_MS,
+    };
+    window.localStorage.setItem(REF_STORAGE_KEY, JSON.stringify(payload));
+  } catch {
+    /* private mode / storage disabled — harmless */
+  }
+}
+
 export function WaitlistForm() {
   const [pulse, setPulse] = useState(false);
+  const [attributionSource, setAttributionSource] = useState<string>("");
   const [state, action, pending] = useActionState<
     WaitlistResult | null,
     FormData
   >(joinWaitlist, null);
+
+  // Resolve attribution on mount: URL `?ref=` wins (and gets stored),
+  // otherwise fall back to a previously stored ref. Empty string =
+  // server falls back to "landing".
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const urlRef = (params.get("ref") ?? "").trim().toLowerCase();
+      if (urlRef && REF_PATTERN.test(urlRef)) {
+        writeStoredRef(urlRef);
+        setAttributionSource(urlRef);
+        return;
+      }
+      const stored = readStoredRef();
+      if (stored) setAttributionSource(stored);
+    } catch {
+      /* SSR / no window — harmless */
+    }
+  }, []);
 
   useEffect(() => {
     let timeout: number | undefined;
@@ -84,6 +144,9 @@ export function WaitlistForm() {
           aria-label="Email address"
           className="min-w-0 flex-1 bg-transparent px-4 py-2 text-base text-white placeholder:text-white/70 outline-none disabled:opacity-60"
         />
+        {/* Attribution slug, set from ?ref= or stored ref. Server
+            re-validates; empty string falls back to "landing". */}
+        <input type="hidden" name="source" value={attributionSource} />
         <button
           type="submit"
           disabled={pending}
