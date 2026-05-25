@@ -59,8 +59,10 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="mt-4">
-              This Privacy Policy explains how Horizon (&ldquo;we&rdquo;,
-              &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses,
+              This Privacy Policy explains how Horizon Technologies Inc.
+              (&ldquo;Horizon&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
+              or &ldquo;our&rdquo;), a Delaware corporation with offices at
+              501 Folsom St, San Francisco, CA 94105, collects, uses,
               discloses, and safeguards your information when you visit our
               website at gethorizon.xyz (the &ldquo;Website&rdquo;), sign up
               for our waitlist, interact with our marketing on third-party
@@ -461,22 +463,38 @@ export default function PrivacyPolicyPage() {
                 className="font-medium text-cobalt-deep underline decoration-cobalt-deep/40 underline-offset-4 transition-colors hover:decoration-cobalt-deep"
               >
                 privacy@gethorizon.xyz
-              </a>
-              .
+              </a>{" "}
+              or by mail at the address below.
             </p>
+            <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50/60 px-5 py-4 text-sm text-slate-700">
+              <div className="font-medium text-slate-900">
+                Horizon Technologies Inc.
+              </div>
+              <div>501 Folsom St</div>
+              <div>San Francisco, CA 94105</div>
+              <div>United States</div>
+            </div>
           </section>
         </div>
       </main>
 
       <footer className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-6 text-sm text-slate-500">
-          <span>© 2026 Horizon</span>
-          <Link
-            href="/"
-            className="font-medium transition-colors hover:text-slate-900"
-          >
-            Horizon
-          </Link>
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-6 text-sm text-slate-500">
+          <span>© 2026 Horizon Technologies Inc.</span>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/terms"
+              className="transition-colors hover:text-slate-900"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/"
+              className="font-medium transition-colors hover:text-slate-900"
+            >
+              Home
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

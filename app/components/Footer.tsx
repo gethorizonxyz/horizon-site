@@ -79,24 +79,30 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col gap-5 border-t border-slate-200 pt-8 md:flex-row md:items-center md:justify-between md:gap-4">
-          <div className="flex items-center gap-2.5 text-sm text-slate-500">
-            <HorizonLogo className="h-5 w-5 text-slate-700" />
-            <span>© 2026 Horizon, Inc.</span>
+        <div className="mt-14 flex flex-col gap-5 border-t border-slate-200 pt-8 md:flex-row md:items-start md:justify-between md:gap-4">
+          <div className="flex items-start gap-2.5 text-sm text-slate-500">
+            <HorizonLogo className="mt-0.5 h-5 w-5 text-slate-700" />
+            <div className="flex flex-col gap-0.5">
+              <span>© 2026 Horizon Technologies Inc.</span>
+              <span className="text-slate-400">
+                501 Folsom St, San Francisco, CA 94105
+              </span>
+            </div>
           </div>
-          {/* Legal links hidden until pages exist — re-enable when ready.
           <div className="flex flex-wrap gap-6 text-sm text-slate-500">
-            <a href="#" className="transition-colors hover:text-slate-900">
+            <a
+              href="/terms"
+              className="transition-colors hover:text-slate-900"
+            >
               Terms of service
             </a>
-            <a href="#" className="transition-colors hover:text-slate-900">
+            <a
+              href="/privacy"
+              className="transition-colors hover:text-slate-900"
+            >
               Privacy policy
             </a>
-            <a href="#" className="transition-colors hover:text-slate-900">
-              Legal
-            </a>
           </div>
-          */}
         </div>
       </div>
 
