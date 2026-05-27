@@ -26,10 +26,8 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-white/20"
       />
 
-      {/* Hero content — flex-1 so it vertically centers in the space
-          ABOVE the partner row, which now lives in normal flow at the
-          bottom. Prevents the old absolute-positioned logos from
-          overlapping the waitlist on short / wide viewports. */}
+      {/* Hero content — flex-1 so it vertically centers the title,
+          subhead and waitlist form in the available space. */}
       <div className="relative z-10 flex flex-1 items-center justify-center px-6 pt-28 pb-10">
       <div className="mx-auto w-full max-w-5xl text-center">
         <h1 className="font-display bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_45%,rgba(255,255,255,0.55)_100%)] bg-clip-text pb-3 text-5xl font-normal leading-[1.15] tracking-[-0.04em] text-transparent sm:text-7xl md:text-8xl">
@@ -45,29 +43,6 @@ export default function Hero() {
         </p>
 
         <WaitlistForm />
-        </div>
-      </div>
-
-      {/* Partner row — normal flow at the bottom of the flex column
-          (not absolute), so it always sits below the waitlist with
-          breathing room and never overlaps it at any viewport size. */}
-      <div className="relative z-10 w-full px-6 pb-10 pt-4 sm:pb-16">
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
-          {[
-            { name: "Visa", src: "/logos/visa.png", h: 22 },
-            { name: "Mastercard", src: "/logos/mastercard.png", h: 30 },
-            { name: "Bridge", src: "/logos/bridge.png", h: 22 },
-            { name: "Privy", src: "/logos/privy.png", h: 22 },
-            { name: "Rain", src: "/logos/rain.png", h: 22 },
-          ].map(({ name, src, h }) => (
-            <img
-              key={name}
-              src={src}
-              alt={name}
-              style={{ height: `${h}px` }}
-              className="w-auto opacity-80 [filter:brightness(0)_invert(1)_drop-shadow(0_2px_4px_rgba(15,23,42,0.35))] transition-opacity hover:opacity-100"
-            />
-          ))}
         </div>
       </div>
 
